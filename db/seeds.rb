@@ -5,8 +5,30 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Restaurant.create!(
-name: 'kit kat'
+User.destroy_all
+Reservation.destroy_all
+Restaurant.destroy_all
 
 
+kitkat = Restaurant.create!(
+name: 'kit kat',
+address:'1234',
+neighbourhood:'Entertainment District',
+price_range: 'Expensive',
+summary: 'ns;enresnrvilserfn',
+menu: 'esjriu iaueniae iuwenin iune'
+
+)
+
+emanuel = User.create!(
+full_name: 'Emanuel Samel',
+phone_number: 3713360,
+
+)
+
+Reservation.create!(
+time: 12,
+party_size: 5,
+restaurant: kitkat,
+user: emanuel
 )

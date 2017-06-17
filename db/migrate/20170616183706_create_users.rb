@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
       t.string  :full_name
       t.integer :phone_number
-      t.integer :reservation_id
+    
 
       t.timestamps
 
