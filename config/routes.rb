@@ -5,4 +5,5 @@ resource :sessions, only: %i(new create destroy)
 resources :users
 resources :restaurants
 resources :reservations
+
 end
