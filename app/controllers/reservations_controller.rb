@@ -6,14 +6,16 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def create
     @reservation = Reservation.new
 
     @reservation.time                = params[:reservation][:time]
-    @reservation.party_size             = params[:reservation][:party_size]
-
+    @reservation.party_size          = params[:reservation][:party_size]
+    @reservation.restaurant_id      = params[:restaurant_id]
+    @reservation.user_id            = params[:reservation][:user_id]
 
     if @reservation.save
       # default behaviour of flash works on a redirect
@@ -21,7 +23,7 @@ class ReservationsController < ApplicationController
       redirect_to root_url
     else
       # flash.now works on the same request
-      flash.now[:error] = 'Sorry, try again!'
+      flash.now[:error] = 'Sorry, Please fill in the required fields!'
       render :new
     end
   end
@@ -32,8 +34,8 @@ class ReservationsController < ApplicationController
   end
 
   def show
-
-  end
+   @reservation = Reservation.find(params[:id])
+   end
 
   def update
 
