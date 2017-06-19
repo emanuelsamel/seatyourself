@@ -10,5 +10,10 @@
             <li> <%= @restaurant.menu %> </li>
 
             </ul>
+          <%  if current_user %>
 
 <p> <%= link_to('Make a Reservation', new_restaurant_reservation_path(@restaurant.id)) %> </p>
+
+<%else%>
+<p> <%=link_to('Sign up', root_url)%></p>
+ <% end%>
