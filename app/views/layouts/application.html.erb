@@ -11,11 +11,14 @@
   <body>
 
 
-        <p><%= link_to 'Home', restaurants_view_index_customer_url%> <%if params[:user][:role] == 'owner'%>
-        <%else%>
-        <%link_to 'HOME', restaurants_view_index_owner_url%>
-      </p>
-    <%end%>
+        <p>
+          <% if current_user.role == 'customer' %>
+            <%= link_to 'Home', restaurants_view_index_customer_url%>
+          <% elsif current_user.role == 'owner'%>
+            <%link_to 'HOME', restaurants_view_index_owner_url%>
+            <% end %>
+        </p>
+
     <% if current_user %>
       <p>
         Hello <%= current_user.email %>!
