@@ -10,45 +10,31 @@ Reservation.destroy_all
 Restaurant.destroy_all
 
 
-macdonalds = Restaurant.create!(
-name: 'kit kat',
-address:'1234',
-neighbourhood:'Entertainment District',
-price_range: 'Expensive',
-summary: 'ns;enresnrvilserfn',
-menu: 'esjriu iaueniae iuwenin iune',
-photo_url: 'http://www.mcdonalds.ca/content/dam/Canada/en/home_page_new/images/slide1.jpg'
-
-)
-
-emanuel = User.create!(
-full_name: 'Emanuel Samel',
-phone_number: 3713360,
-email: 'mannys@hotmail.com',
-password: '1234'
-)
-
-Reservation.create!(
-time: 12,
-party_size: 5,
-restaurant: macdonalds,
-user: emanuel
-)
-
 kitkat = Restaurant.create!(
-name: 'kit kat',
-address:'1234',
+name: 'Kit Kat',
+address:'1234 King Street',
 neighbourhood:'Entertainment District',
 price_range: 'Expensive',
-summary: 'ns;enresnrvilserfn',
-menu: 'esjriu iaueniae iuwenin iune',
-photo_url: 'https://media-cdn.tripadvisor.com/media/photo-s/03/34/4c/b0/kit-kat.jpg'
+summary: 'This place has food and also drinks. Also, chairs.',
+menu: 'Lasagna, hot dogs, and fish sticks',
+photo_url: 'https://media-cdn.tripadvisor.com/media/photo-s/03/34/4c/b0/kit-kat.jpg',
+max_capacity: 100
+)
 
+mcdonalds = Restaurant.create!(
+name: 'McDonalds',
+address:'689 Bloor St. East',
+neighbourhood:'Tire Fire District',
+price_range: 'Cheap',
+summary: 'Never a lineup for the restroom',
+menu: 'Burgers, fries, weird muffins, Star Wars toys',
+photo_url: 'http://www.mcdonalds.ca/content/dam/Canada/en/home_page_new/images/slide1.jpg',
+max_capacity: 80
 )
 
 emanuel = User.create!(
 full_name: 'Emanuel Samel',
-phone_number: 3713360,
+phone_number: 4169671111,
 email: 'mannys@hotmail.com',
 password: '1234'
 )
@@ -56,31 +42,13 @@ password: '1234'
 Reservation.create!(
 time: 12,
 party_size: 5,
-restaurant: kitkat,
+restaurant: mcdonalds,
 user: emanuel
 )
 
-macdonalds = Restaurant.create!(
-name: 'kit kat',
-address:'1234',
-neighbourhood:'Entertainment District',
-price_range: 'Expensive',
-summary: 'ns;enresnrvilserfn',
-menu: 'esjriu iaueniae iuwenin iune',
-photo_url: 'http://www.mcdonalds.ca/content/dam/Canada/en/home_page_new/images/slide1.jpg'
-
-)
-
-emanuel = User.create!(
-full_name: 'Emanuel Samel',
-phone_number: 3713360,
-email: 'mannys@hotmail.com',
-password: '1234'
-)
-
 Reservation.create!(
-time: 12,
-party_size: 5,
-restaurant: macdonalds,
+time: 14,
+party_size: 4,
+restaurant: kitkat,
 user: emanuel
 )
