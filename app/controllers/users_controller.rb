@@ -15,23 +15,26 @@ class UsersController < ApplicationController
 
     if @user.save
 
+
+      session[:user_id] = @user.id
+
       if params[:user][:role] == 'Owner'
         redirect_to new_restaurant_url
       else
 
-      # default behaviour of flash works on a redirect
-      flash[:notice] = 'Account successfully created!'
-      redirect_to '/restaurants/view_index_customer'
-    end
-    else
-      # flash.now works on the same request
-      flash.now[:error] = 'Sorry, try again!'
-      render :new
-    end
+        # default behaviour of flash works on a redirect
+        flash[:notice] = 'Account successfully created!'
+        redirect_to '/restaurants/view_index_customer'
+      end
+  
+  else
+    # flash.now works on the same request
+    flash.now[:error] = 'Sorry, try again!'
+    render :new
   end
+end
 
-  def show
-    @reservations = Reservation.where(user_id: session[:id])
-  end
-
+def show
+  @reservations = Reservation.where(user_id: session[:id])
+end
 end

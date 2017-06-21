@@ -21,10 +21,13 @@ class RestaurantsController < ApplicationController
         menu: params[:restaurant][:menu],
         max_capacity: params[:restaurant][:max_capacity],
         photo_url: params[:restaurant][:photo_url],
+        user_id: session[:user_id]
       )
 
       if @restaurant.save
+
         redirect_to '/restaurants/view/index_owner'
+
       else
         flash.now[:alert] = @restaurant.errors.full_messages
         render :new
