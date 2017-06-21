@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       # default behaviour of flash works on a redirect
       flash[:notice] = 'Reservation successfully created!'
-      redirect_to root_url
+      redirect_to '/user/user_reservation'
     else
       # flash.now works on the same request
       flash.now[:error] = 'Sorry, Please fill in the required fields!'

@@ -1,0 +1,40 @@
+<h1>Add Your Restaurant</h1>
+
+
+<% if @restaurant.errors.any? %>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @restaurant do |f| %>
+
+<%=f.label :name %>
+<%=f.text_field :name %>
+
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :neighbourhood %>
+<%= f.text_field :neighbourhood %>
+
+<%= f.label :price_range %>
+<%= f.text_field :price_range %>
+
+<%= f.label :summary %>
+<%= f.text_field :summary %>
+
+<%= f.label :menu %>
+<%= f.text_field :menu %>
+
+<%= f.label :photo_url %>
+<%= f.url_field :photo_url %>
+
+<%= f.label :max_capacity %>
+<%= f.number_field :max_capacity %>
+
+<%= f.submit 'Add' %>
+
+<%end%>
