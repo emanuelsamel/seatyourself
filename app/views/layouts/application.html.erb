@@ -11,19 +11,20 @@
   <body>
 
 
-        <p>
-          <% if current_user.role == 'customer' %>
-            <%= link_to 'Home', restaurants_view_index_customer_url%>
-          <% elsif current_user.role == 'owner'%>
-            <%link_to 'HOME', restaurants_view_index_owner_url%>
-            <% end %>
-        </p>
+
 
     <% if current_user %>
       <p>
         Hello <%= current_user.email %>!
         |
         <%= link_to 'Logout', sessions_path, method: :delete %>
+
+        <% if current_user.role = 'customer' %>
+          <%= link_to "View Your Reservations", restaurants_view_index_customer_url%>
+        <% elsif current_user.role = 'owner'%>
+          <%link_to "See Upcoming Reservations", restaurants_view_index_owner_url%>
+        <% end %>
+
       </p>
 
     <% else %>
