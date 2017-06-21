@@ -36,7 +36,8 @@ emanuel = User.create!(
 full_name: 'Emanuel Samel',
 phone_number: 4169671111,
 email: 'mannys@hotmail.com',
-password: '1234'
+password: '1234',
+role: 'owner'
 )
 
 Reservation.create!(

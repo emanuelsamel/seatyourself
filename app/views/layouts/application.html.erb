@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Seatyourself</title>
+    <title>Seat Yourself</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
 
 
-        <p><%= link_to 'Home', restaurants_view_index_customer_url%> <%if params[:user][:role] == 'Owner'%>
+        <p><%= link_to 'Home', restaurants_view_index_customer_url%> <%if params[:user][:role] == 'owner'%>
         <%else%>
         <%link_to 'HOME', restaurants_view_index_owner_url%>
       </p>
